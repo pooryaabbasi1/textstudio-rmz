@@ -1,5 +1,6 @@
 (function(){
 var cs=new CSInterface(),$=function(i){return document.getElementById(i)};
+try{var vl=$("verLabel");if(vl){var match=location.pathname.match(/TextStudio[\/\\]?/);var vPath=decodeURIComponent(location.pathname).replace(/[^\/\\]*$/,"")+"version.json";fetch(vPath+"?t="+Date.now()).then(function(r){return r.json()}).then(function(v){vl.textContent="v"+v.version}).catch(function(){})}}catch(e){}
 var MOTIONS={none:"بدون",fade:"محو",slideUp:"از پایین",slideDown:"از بالا",slideLeft:"از راست",slideRight:"از چپ",zoom:"زوم",pop:"پاپ",spin:"چرخش",drop:"سقوط",blurZoom:"زوم دور"};
 // state at hidden end of entrance: {o opacity 0-100, x,y offset as frame fraction, s scale %, r rotation deg, mid: optional overshoot}
 var FROM={none:{o:100,x:0,y:0,s:100,r:0},fade:{o:0,x:0,y:0,s:100,r:0},slideUp:{o:0,x:0,y:.25,s:100,r:0},slideDown:{o:0,x:0,y:-.25,s:100,r:0},
