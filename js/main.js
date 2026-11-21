@@ -208,7 +208,7 @@ $("subApply").onclick=function(){var st=$("status"),items=subItems();if(!items.l
   setTimeout(function(){exportOne(subStyle(it),it.start,function(r){if(r!="OK")err++;next()})},10)})()};
 drawSubs();
 // ---- one-click updater ----
-var UPD="https://raw.githubusercontent.com/pooryaabbasi1/textstudio-rmz/main/TextStudio/";
+var UPD="https://raw.githubusercontent.com/pooryaabbasi1/textstudio-rmz/main/";
 $("updB").onclick=function(){var st=$("status");if(!cs.isInHost()){st.textContent="بروزرسانی فقط داخل پریمیر کار می‌کند";return}
  var fs=require("fs"),path=require("path"),root=decodeURIComponent(location.pathname).replace(/^\/([A-Za-z]:)/,"$1").replace(/[\\\/]index\.html$/,"");
  var local={};try{local=JSON.parse(fs.readFileSync(path.join(root,"version.json"),"utf8"))}catch(e){}
